@@ -1,5 +1,8 @@
 <?php
 require_once("funciones.php");
+require_once('classes\Validacion.php');
+require_once('classes\Conexion.php');
+require_once('classes\User.php');
 
 session_start();
 
@@ -7,36 +10,13 @@ if (isset($_SESSION['nombre'])){
   header('location: index.php');
 }
 
+if ($_POST) {
 
-
-
-  if ($_POST) {
-
-    //VALIDACION Email
-    if (!isset($_POST['email'])){
-      $error['email']= "Completar con el email o usuario";
-    } else if ($_POST['email']){
-      $email= $_POST['email'];
-    }
-    //VALIDACION Contraseña
-    if (empty($_POST['password'])) {
-      $error['password']= "Ingresa tu contraseña";
-    }
-    //VERIFICA existencia de usuario
-    else if (!verificarUsuario($_POST['email'], $_POST['password'])){
-      $error['password']= "La contraseña no coincide con el email. Si nunca te registraste, hacelo <a href='registro.php'>aquí</a>.";
-    }
-
-    //Guarda cookie y redirecciona
-    else if (isset ($_POST['recordarme'])){
-      setcookie('email', $_POST['email'], time()+ 3600 * 24 * 7); // cambie 'email' por 'nombre'
-      $_SESSION = verificarUsuario($_POST['email'], $_POST['password']);
-      header ("location: index.php"); // cambie el Location, antes binevenido.php, ahora index.php
-   } else {
-      $_SESSION = verificarUsuario($_POST['email'], $_POST['password']);
-      header ("location: index.php");
-    }
-  }
+  $user1 = new User();
+  $user1->ingresar($_POST);
+  $errores = $user1->getErrores();
+   $email = $_POST['email'];
+}
 
  ?>
 
@@ -76,10 +56,10 @@ if (isset($_SESSION['nombre'])){
                   echo $email;
                 }
               ?>">
-              <?php echo isset($error['email']) ? $error['email'] : "" ?>
+              <?php echo isset($errores['email']) ? $errores['email'] : "" ?>
               <label for="contraseña">Contraseña :</label>
               <input type="password" name="password" id= "password" placeholder="Contraseña">
-              <?php echo isset($error['password']) ? $error['password'] : "" ?>
+              <?php echo isset($errores['password']) ? $errores['password'] : "" ?>
             </div>
             <div class="abajo">
               <div class="">

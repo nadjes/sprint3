@@ -1,36 +1,18 @@
 <?php
 
 require_once("funciones.php");
+require_once('classes\Validacion.php');
+require_once('classes\Conexion.php');
+require_once('classes\User.php');
 
   if ($_POST) {
 
-    //VALIDACION Email
-    if (!isset($_POST['email'])){
-      $error['email']= "Completar con el email";
-    } else if ($_POST['email']){
-      $email= $_POST['email'];
-    }
-    //VALIDACION Contraseña
-    if (empty($_POST['password'])) {
-      $error['password']= "Ingresa tu contraseña";
-    }
-    //VERIFICA existencia de usuario
-    else if (!verificarUsuario($_POST['email'], $_POST['password'])){
-      $error['password']= "La contraseña no coincide con el email. Si nunca te registraste, hacelo <a href='registro.php'>aquí</a>.";
-    }
-
-    //Guarda cookie y redirecciona
-    else if (isset ($_POST['recordarme'])){
-      setcookie('email', $_POST['email'], time()+ 3600 * 24 * 7); // cambie 'email' por 'nombre'
-      $_SESSION = verificarUsuario($_POST['email'], $_POST['password']);
-      header ("location: index.php"); // cambie el Location, antes binevenido.php, ahora index.php
-   } else {
-      $_SESSION = verificarUsuario($_POST['email'], $_POST['password']);
-      header ("location: index.php");
-    }
+    $user1 = new User();
+    $user1->ingresar($_POST);
+    $errores = $user1->getErrores();
+    $email = $_POST['email'];
   }
-
- // CIERRA EL PHP ?>
+   // CIERRA EL PHP ?>
 
 <header>
   <div class="izquierda">
@@ -85,12 +67,12 @@ require_once("funciones.php");
               echo '<form class="" action="ingresar.php" method="post">
                  <div class="ingreso-arriba-arriba">
                    <label for="usuario">Usuario o e-mail</label>
-                   <input type="text" name="email" value=""';
-                   if(isset($_COOKIE['email'])) {
+                   <input type="text" name="email" value="'; if(isset($_COOKIE['email'])) {
                      echo $_COOKIE['email'];
                    } else if (isset($email)){
                      echo $email;
-                   };
+                   } ;
+
                    echo' " id="usuario" placeholder="usuario">
                    <label for="pass">Contraseña</label>
                    <input type="password" name="password" value="" id="pass" placeholder="Contraseña">
