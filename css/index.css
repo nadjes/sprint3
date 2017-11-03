@@ -1,0 +1,389 @@
+
+  * {
+    box-sizing: border-box;
+    /*font-family: 'News Cycle', sans-serif;*/
+    /*font-family: 'ubuntu', serif;*/
+
+    }
+
+    .contenedor{
+       width: 100%;
+       background-color: #CSC1C0;
+       position: relative;
+
+     }
+
+   .banner{
+     width: 100%;
+     height: auto;
+     max-height: 100vh;
+     overflow: hidden;
+     position: relative;
+   }
+
+   .banner video{
+      width: 100vw;
+     }
+
+   .banner p{
+     font-size: 55px;
+     color: white;
+     font-family: 'EB Garamond', serif;
+     position: absolute;
+     left: 25%;
+     top: 76%;
+     border: 2px solid
+   }
+
+   .banner img{
+     position: relative;
+     bottom: 30px;
+     right: 47%;
+     width: 50%;
+     z-index: 2;
+   }
+
+   .banner-cel{
+     display: none;
+   }
+
+   .parallax-primavera{
+     margin: 0px;
+     height: 100vh;
+     width: 100%;
+     background-image: url("../images/primavera1.jpg");
+     background-position: center;
+     background-size: cover;
+     background-attachment: fixed;
+     position: relative;
+   }
+
+   section {
+     overflow: hidden;
+     width: 85%;
+     background: -webkit-linear-gradient(#F8F8F8, white);
+     background: -o-linear-gradient(#F8F8F8, white);
+     background: linear-gradient(#F8F8F8, white);
+     text-align: center;
+     color: #121D33;
+     height: 1100px;
+   }
+   .ofertas .prod-oferta{
+     float: left;
+     width: 20%;
+     position: relative;
+     margin: 1.66%;
+   }
+   .ofertas .prod-oferta p{
+     margin-top: 0px;
+   }
+   .ofertas .prod-oferta img{
+     width: 100%;
+     border-radius: 20%;
+     transition: 0.5s;
+   }
+
+   .ofertas .prod-oferta img:hover{
+      transform: scale(1.03,1.03);
+   }
+  .ofertas .prod-oferta button {
+    left: 50%;
+    transform: translateX(0%);
+    border: 1px solid;
+    border-radius: 9px;
+    padding: 5px;
+    font-size: 15px;
+    background-color: #B9A88E;
+    }
+
+    .secciones  h2{
+     margin-left: 8%;
+     font-size: 31px;
+     margin-left: -20px;
+   }
+
+   .parallax-divisor1{
+     margin: 0px;
+     height: 100vh;
+     width: 100%;
+     background-image: url("../images/parallax5.jpg");
+     background-position: center;
+     background-size: cover;
+     background-attachment: fixed
+   }
+
+   .parallax-invierno{
+     margin: 0px;
+     height: 100vh;
+     width: 100%;
+     background-image: url("../images/invierno1.jpg");
+     background-position: right;
+     background-size: cover;
+     position: relative;
+   }
+   .parallax-invierno img{
+     width: 27%;
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     left: 10%;
+     transition: width 0.5s;
+   }
+   .parallax-invierno img:hover{
+     width: 27.5%;
+   }
+   .parallax-divisor2{
+     margin: 0px;
+     height: 100vh;
+     width: 100%;
+     background-image: url("../images/parallax4.jpg");
+     background-position: center;
+     background-size: cover;
+     background-attachment: fixed
+   }
+
+   .parallax-verano{
+     margin: 0px;
+     height: 100vh;
+     width: 100%;
+     background-image: url("../images/verano.jpg");
+     background-position: center;
+     background-size: cover;
+     position: relative;
+   }
+   .parallax-verano img{
+     width: 22%;
+     position: relative;
+     margin: 0 auto;
+     top: 67%;
+     left: 50%;
+     transform: translateX(-50%);
+     transition: width 0.5s;
+   }
+   .parallax-verano img:hover{
+     width: 22.5%;
+   }
+
+   .parallax-divisor3{
+     margin: 0px;
+     height: 100vh;
+     width: 100%;
+     background-image: url("../images/parallax8.jpeg");
+     background-position: center;
+     background-size: cover;
+     background-attachment: fixed
+   }
+
+   .parallax-hombres {
+     margin: 0px;
+     height: 100vh;
+     width: 100%;
+     background-image: url("../images/hombre.jpg");
+     background-position: top;
+     background-size: cover;
+     position: relative;
+   }
+   .parallax-hombres img{
+     width: 27%;
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     left: 15%;
+     transition: width 0.5s;
+   }
+   .parallax-hombres img:hover {
+     width: 27.5%;
+   }
+
+   .parallax-divisor4 {
+     margin: 0px;
+     height: 100vh;
+     width: 100%;
+     background-image: url("../images/parallax9.jpg");
+     background-position: top right;
+     background-size: cover;
+     background-attachment: fixed
+   }
+
+   .parallax-mujeres {
+     margin: 0px;
+     height: 100vh;
+     width: 100%;
+     background-image: url("../images/parallax2.jpg");
+     background-position: top;
+     background-size: cover;
+     position: relative;
+   }
+
+   .parallax-mujeres img{
+     width: 31%;
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     left: 13%;
+     transition: width 0.5s;
+   }
+   .parallax-mujeres img:hover{
+     width: 31.5%;
+   }
+
+/* NOTE: Responsive Tablets */
+
+@media (max-width:960px) and (min-width:461px){
+
+
+   /* NOTE: body */
+   div.banner-cel{
+     display: block;
+     width: 100%;
+     background-image: url("../images/banner.jpg");
+     height: 400px;
+     background-size: 100% 85%;
+     background-repeat: no-repeat;
+     background-position-y: 60px;
+   }
+   div.banner-cel img{
+      display: none;
+   }
+   div.banner{
+      display: none;
+   }
+
+   .ofertas{
+      margin-top: -105px;
+   }
+  .ofertas .prod-oferta {
+      float: left;
+      width: 30%;
+      position: relative;
+      margin: 1.66%;
+   }
+  .ofertas .prod-oferta p{
+      display: none;
+   }
+  .ofertas .prod-oferta button {
+      left: 50%;
+      transform: translateX(0%);
+      border: 1px solid;
+      border-radius: 9px;
+      padding: 2px;
+      font-size: 18px;
+      width: 70%;
+    }
+   section.ofertas{
+      width: 100%;
+      height: 100%;
+      margin-top: 3px;
+   }
+}
+
+@media (orientation: portrait){
+  .parallax-primavera {
+    background-image: url("../images/primaveramobile.jpg");
+  }
+  .parallax-invierno img{
+    top: 50%;
+    left: 60%;
+  }
+  .parallax-divisor3 {
+    background-image: url("../images/parallax8mobile.jpg");
+  }
+}
+
+@media (max-width:604px){
+  .parallax-primavera {
+    background-image: url("../images/primaveramobile.jpg");
+  }
+  .parallax-invierno img{
+    top: 50%;
+    left: 60%;
+  }
+  .parallax-divisor3 {
+    background-image: url("../images/parallax8mobile.jpg");
+  }
+}
+
+/* NOTE: Responsive Mobile */
+
+@media (max-width:460px){
+
+
+   /* NOTE: body mobile*/
+
+   div.banner{
+      display: none;
+   }
+
+   div section.categorias{
+      display: none;
+   }
+
+   div.banner-cel{
+     display: block;
+     width: 100%;
+     background-image: url("../images/banner.jpg");
+     height: 400px;
+     background-size: 100% 80%;
+     background-repeat: no-repeat;
+     background-position-y: 60px;
+   }
+   div.banner-cel img{
+     width: 15%;
+     position: relative;
+     left: 4%;
+     top: 302px;
+     display: none;
+   }
+   div.banner-cel p{
+     display: none;
+     text-align: center;
+     font-size: 37px;
+     color: white;
+     font-family: 'EB Garamond', serif;
+     position: relative;
+     left: 50%;
+     transform: translateX(-50%);
+     top: 222px;
+     border: 2px solid
+   }
+
+   div.secciones section.ofertas{
+      width: 100%;
+      height: 100%;
+      margin-top: 70px;
+      margin-top: -105px;
+      overflow: hidden;
+   }
+
+   .ofertas .prod-oferta{
+      float: none;
+      width: 100%;
+      position: relative;
+      margin: 1.66%;
+      overflow: hidden;
+   }
+   .ofertas .prod-oferta p{
+      display: none;
+   }
+    .ofertas .prod-oferta img{
+      margin-bottom: 20px;
+   }
+   .ofertas .prod-oferta button {
+    left: 50%;
+    transform: translateX(0%);
+    border: 1px solid;
+    border-radius: 9px;
+    padding: 10px;
+    font-size: 18px;
+    }
+    ofertas h2 {
+    margin: 0px;
+    font-size: 30px;
+    width: 100%;
+}
+
+
+
+
+
+}/* fin mobile*/

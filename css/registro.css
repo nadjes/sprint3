@@ -1,0 +1,251 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  /*font-family: 'ubuntu', sans-serif;*/
+}
+.contenedor {
+  width: 100%;
+  background-color: #f5f5f5;
+  padding-top: 50px;
+  display: flex;
+  padding-bottom: 30px;
+}
+/*------------------- FORMULARIO DE REGISTRO ------------*/
+
+/* NOTE: REGISTRACION PHP */
+#errorUsuario, #errorNombre, #errorApellido, #errorEmail, #errorPass{
+   border: 1px solid red;
+}
+
+
+.formulario {
+  width: 50%;
+  border-radius: 4px;
+
+}
+.formulario h1 {
+  text-align: center;
+  margin: 20px 0;
+
+}
+.registro {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+}
+.registro input, .registro div {
+  margin: 10px auto;
+}
+.registro .arriba {
+  display: flex;
+  justify-content: space-between;
+  width: 72%;
+}
+.registro .arriba input {
+  font-size: 18px;
+  width: 40%;
+  height: 30px;
+  border-radius: 4px;
+  padding: 5px;
+  border: 1px solid #dddfe2;
+}
+.registro input {
+  width: 64.8%;
+  height: 30px;
+  border-radius: 4px;
+  font-size: 18px;
+  padding: 5px;
+  border: 1px solid #dddfe2;
+}
+.registro .abajo {
+  display: flex;
+  justify-content: space-between;
+  width: 72%;
+}
+.registro .abajo input {
+  width: 40%;
+  height: 30px;
+  border-radius: 4px;
+  font-size: 18px;
+  padding: 5px;
+  border: 1px solid #dddfe2;
+}
+input.avatar {
+  width: 50%;
+  padding: 3px;
+  font-size: 15px;
+}
+div.aceptar {
+  display: block;
+
+}
+.aceptar .izquierda {
+  display: flex;
+  align-items: center;
+}
+.aceptar .izquierda input {
+  width: 13px;
+  margin-right: 20px;
+}
+.aceptar .izquierda label {
+  margin-left: 6px;
+}
+.aceptar .derecha {
+  display: flex;
+  flex-direction: column;
+}
+.aceptar .derecha input {
+  background-color: #5cb85c;
+  border: none;
+  color: white;
+  width: 127px;
+  height: 45px;
+}
+/*------------------- FIN FORMULARIO DE REGISTRO ------------*/
+
+/*---------------------- INGRESAR CON REDES SOCIALES ------------*/
+.ingresar {
+  background-color: white;
+  width: 27%;
+  height: 300px;
+  padding-top: 20px;
+  border-radius: 4px;
+}
+.ingresar h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.ingresar div {
+  width: 85%;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+.facebook {
+  background-color: #3b5998;
+}
+.facebook a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  display: block;
+  font-size: 18px;
+}
+.facebook i {
+  font-size: 20px;
+  margin-right: 27px;
+  color: white;
+}
+.gmail {
+  background-color: #df4a32;
+}
+.gmail a{
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  padding: 10px;
+  display: block;
+}
+.gmail i {
+  font-size: 18px;
+  margin-right: 16px;
+}
+.twitter {
+  background-color: #1da1f2;
+}
+.twitter a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  display: block;
+  font-size: 18px;
+}
+.twitter i {
+  font-size: 20px;
+  margin-right: 20px;
+  color: white;
+}
+
+
+
+/*------------ NOTE: Footer -----------*/
+
+/* NOTE: responsive tablet */
+@media (max-width:960px) and (min-width:461px){
+
+   .contenedor{
+     flex-direction: column;
+
+
+   }
+   /* NOTE: body tablet */
+   .formulario {
+       width: 95%;
+       background-color: white;
+       padding-top: 20px;
+       border-radius: 4px;
+       height: 450px;
+    }
+    .ingresar {
+      width: 60%;
+      margin-top: 170px;
+      text-align: center;
+    }
+
+   div.aceptar {
+     margin: 5px 0px;
+     display: block;
+   }
+   #btn-crearcuenta{
+     position: relative;
+     bottom: 20px;
+   }
+
+
+
+}
+
+/* NOTE: responsive mobile */
+@media (max-width:460px){
+   .contenedor{
+      display: block;
+   }
+   .formulario {
+      width: 100%;
+      background-color: white;
+      padding-top: 20px;
+      border-radius: 4px;
+      height: 450px;
+    }
+    .ingresar{
+      width: 100%;
+      margin-top: 280px;
+      text-align:  center;
+   }
+
+   div.aceptar {
+      margin: 5px 0px;
+      display: block;
+   }
+   #btn-crearcuenta{
+      position: relative;
+      bottom: 20px;
+   }
+
+
+   .registro .arriba {
+      flex-wrap: wrap;
+   }
+   .registro .arriba input{
+      width: 100%;
+   }
+   .registro .abajo {
+      flex-wrap: wrap;
+   }
+   .registro .abajo input {
+      width: 100%;
+   }
+   .registro input {
+      width: 72%;
+   }
+}

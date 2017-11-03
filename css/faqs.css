@@ -1,0 +1,104 @@
+*{
+  box-sizing: border-box;
+  /*font-family: 'Ubuntu', serif;*/
+  margin: 0 auto;
+}
+
+body{
+  background-color: #f5f5f5;
+  color: #484848;
+}
+
+.margen-arriba{
+    height: 70px;
+}
+
+.contenedor-faqs{
+  width: 90%;
+  background-color: white;
+  position: relative;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Ubuntu', sans-serif;
+  margin-bottom: 25px;
+  }
+
+.pregunta{
+  text-transform: uppercase;
+  background-color: #CCBE99;
+  padding: 13px;
+  margin-bottom: 1px;
+  transition: background-color 0.5s ease;
+}
+
+.pregunta:hover{
+  background-color: #E4DACE;
+}
+.pregunta a{
+  text-decoration: none;
+  color: black;
+}
+input[type=checkbox]{
+    display: none;
+}
+input[type=checkbox]#comprar:checked ~ #como-comprar{
+  height: 120px;
+  padding-bottom: 15px;
+}
+input[type=checkbox]#preg-crear-cuenta:checked ~ #crear-cuenta{
+  height: 120px;
+  padding-bottom: 15px;
+}
+input[type=checkbox]#preg-pago:checked ~ #medios-de-pago{
+  height: 120px;
+  padding-bottom: 15px;
+}
+input[type=checkbox]#preg-fact-a:checked ~ #fact-a{
+  height: 120px;
+  padding-bottom: 15px;
+}
+input[type=checkbox]#preg-envios-desde:checked ~ #envios-desde{
+  height: 120px;
+  padding-bottom: 15px;
+}
+input[type=checkbox]#preg-chequear-pedido:checked ~ #chequear-pedido{
+  height: 120px;
+  padding-bottom: 15px;
+}
+input[type=checkbox]#preg-nadie-pedido:checked ~ #nadie-pedido{
+  height: 120px;
+  padding-bottom: 15px;
+}
+input[type=checkbox]#preg-recibe-otro:checked ~ #recibe-otro{
+  height: 120px;
+  padding-bottom: 15px;
+}
+input[type=checkbox]#preg-devoluciones:checked ~ #devoluciones{
+  height: 120px;
+  padding-bottom: 15px;
+}
+input[type=checkbox]#preg-mayorista:checked ~ #mayorista{
+  height: 120px;
+  padding-bottom: 15px;
+}
+input[type=checkbox]#preg-contacto:checked ~ #contacto{
+  height: 120px;
+  padding-bottom: 15px;
+}
+.respuesta{
+  height: 0px;
+  padding-top: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 0px;
+  overflow: hidden;
+  transition: 1s;
+
+}
+
+.volver-arriba{
+  text-decoration: none;
+  color: #484848;
+  font-size: 12px;
+  font-weight: bold;
+}
