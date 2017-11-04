@@ -1,5 +1,11 @@
 <?php
-session_start() ?>
+session_start();
+require_once('classes/UserJson.php');
+
+$usuariosJson = new UserJson();
+$usuariosJson->guardarUsuariosJson();
+?>
+
 <!DOCTYPE html>
 <html>
    <head>

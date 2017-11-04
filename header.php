@@ -9,8 +9,7 @@ require_once('classes\User.php');
 
     $user1 = new User();
     $user1->ingresar($_POST);
-    $errores = $user1->getErrores();
-    $email = $_POST['email'];
+    //$erroresLog = $user1->getErrores();
   }
    // CIERRA EL PHP ?>
 
@@ -69,8 +68,8 @@ require_once('classes\User.php');
                    <label for="usuario">Usuario o e-mail</label>
                    <input type="text" name="email" value="'; if(isset($_COOKIE['email'])) {
                      echo $_COOKIE['email'];
-                   } else if (isset($email)){
-                     echo $email;
+                   } else if (isset($_POST['email'])){
+                     echo $_POST['email'];
                    } ;
 
                    echo' " id="usuario" placeholder="usuario">

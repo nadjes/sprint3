@@ -13,7 +13,7 @@
 /*------------------- FORMULARIO DE REGISTRO ------------*/
 
 /* NOTE: REGISTRACION PHP */
-#errorUsuario, #errorNombre, #errorApellido, #errorEmail, #errorPass{
+#errorUsuario, #errorNombre, #errorApellido, #errorEmail, #errorPass, #errorAvatar {
    border: 1px solid red;
 }
 

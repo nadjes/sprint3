@@ -9,7 +9,7 @@ if (isset($_SESSION['nombre'])){
   header ("location:index.php");
 }
 
- require_once('funciones.php');
+ //require_once('funciones.php');
 
 $nombre = "";
 $apellido = "";
@@ -25,11 +25,11 @@ if (isset($_POST['btn-crearcuenta'])){
    $email = $_POST['email'];
    $usuario = $_POST['usuario'];
 
-   $user = new User();
+   $user10 = new User();
 
-   $user->registrarse($_POST);
+   $user10->registrarse($_POST, $_FILES);
 
-   $errores = $user->getErrores();
+   $errores = $user10->getErrores();
 
 }//fin
 
@@ -71,13 +71,16 @@ if (isset($_POST['btn-crearcuenta'])){
             }
           ?>
           <input id= "<?php echo $errorUsuario ?>" type="text" name="usuario" value="<?php echo $usuario?>" placeholder="Usuario">
-          <span  id="mens-error">
+
              <?php
+
              if(isset($errores['usuario']) ){
+                echo '<span  id="mens-error">';
                 echo $errores['usuario'].'<br>';
+                echo '</span>';
              }
              ?>
-          </span>
+
           <div class="arriba">
 
 
@@ -88,13 +91,7 @@ if (isset($_POST['btn-crearcuenta'])){
                }
              ?>
             <input id="<?php echo $errorNombre ?>" type="text" name="nombre" value="<?php echo $nombre?>" placeholder="Nombre">
-            <span  id="mens-error">
-               <?php
-               if(isset($errores['nombre']) ){
-                  echo $errores['nombre'].'<br>';
-               }
-               ?>
-            </span>
+
 
             <?php
             $errorApellido = "";
@@ -103,14 +100,22 @@ if (isset($_POST['btn-crearcuenta'])){
             }
             ?>
 
-            <input id="<?php echo $errorApellido ?>" type="text" name="apellido" value="<?php echo $apellido?>" placeholder="Apellido">
-            <span  id="mens-error">
+            <input id="<?php echo $errorApellido ?>" type="text" name="apellido" value="<?php echo $apellido?>" placeholder="Apellido"><br>
+
                <?php
                if(isset($errores['apellido']) ){
+                  echo '<br> <span  id="mens-error">';
                   echo $errores['apellido'].'<br>';
+                  echo '</span>';
+               }
+
+               if(isset($errores['nombre']) ){
+                  echo '<span  id="mens-error">';
+                  echo $errores['nombre'].'<br>';
+                  echo '</span>';
                }
                ?>
-            </span>
+
 
           </div>
 
@@ -122,13 +127,15 @@ if (isset($_POST['btn-crearcuenta'])){
 
             ?>
           <input id="<?php echo $errorEmail ?>" type="email" name="email" value="<?php echo $email?>" placeholder="Email">
-          <span  id="mens-error">
+
              <?php
              if(isset($errores['email']) ){
-                echo $errores['email'].'<br>';
+               echo '<span  id="mens-error">';
+               echo $errores['email'].'<br>';
+               echo '</span>';
              }
              ?>
-          </span>
+
 
           <div class="abajo">
 
@@ -141,25 +148,38 @@ if (isset($_POST['btn-crearcuenta'])){
             ?>
             <input id="<?php echo $errorPass?>" type="password" name="password" value="" placeholder="Contraseña">
 
-            <input id="<?php echo $errorPass?>" type="password" name="confirmar-pass" value="" placeholder="Repita su contraseña">
+            <input id="<?php echo $errorPass?>" type="password" name="confirmar-pass" value="" placeholder="Repita su contraseña"> <br>
 
 
           </div>
 
+          <?php
+
+          if(isset($errores['password']) ){
+            echo '<span id="mens-error">';
+            echo $errores['password'].'<br>';
+            echo '</span>';
+          }
+
+
+          if(isset($errores['confirmar-pass']) ){
+            echo '<span id="mens-error">';
+            echo $errores['confirmar-pass'].'<br>';
+            echo '</span>';
+          }
+          ?>
                   <!-- SPAN PARA MOSTRAR ERRORES-->
 
-          <span  id="mens-error">
-             <?php
-             if(isset($errores) && $errores > 0 ){
-                foreach($errores as $tipoError => $error){
-                   echo $error.'<br>';
-                }
-             }
-             ?>
-          </span>
+
 
           <h3>Imagen de perfil</h3>
-          <input type="file" name="avatar" class="avatar">
+          <input id="<?php echo isset($errores['avatar']) ? 'errorAvatar' : '' ?>" type="file" name="avatar" class="avatar">
+          <?php
+          if(isset($errores['avatar']) ){
+             echo '<span id="mens-error">';
+             echo $errores['avatar'].'<br>';
+             echo '</span>';
+          } ?>
 
           <div class="aceptar">
             <div class="izquierda">

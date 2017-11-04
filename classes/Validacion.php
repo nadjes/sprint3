@@ -15,8 +15,17 @@ trait Validacion {
     return strlen($data) > 5;
   }
 
-  public function validarAvatar(){
+  public function validarAvatarSize($img){
+    return $img['avatar']['size'] < 5000000;
+  }
 
+  public function validarAvatarExt($img) {
+    $nombre = $img['avatar']['name'];
+    $ext = strtolower(pathinfo($nombre, PATHINFO_EXTENSION));
+    $extPermitidas= ['jpeg', 'jpg', 'png', 'svg', 'gif'];
+    if(in_array($ext, $extPermitidas)) {
+      return true;
+    } return false;
   }
 
   public function limpiarDatos($datos){

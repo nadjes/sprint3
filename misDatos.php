@@ -4,6 +4,12 @@ session_start();
 if (!isset($_SESSION['nombre'])){
   header("location: index.php");
 }
+
+if ($_POST) {
+  $user2 = new User();
+  $user2->editarDatos($_POST);
+}
+
 ?>
 
 
@@ -33,7 +39,7 @@ if (!isset($_SESSION['nombre'])){
                if($_SESSION['avatar']['ruta'] == NULL ){
                   $imgPerfil = "images/imgPerfil.jpeg";
                }else{
-                  $imgPerfil = "img/" . $_SESSION['avatar']['ruta'];
+                  $imgPerfil = "classes/img/" . $_SESSION['avatar']['ruta'];
                }
                ?>
 
@@ -43,18 +49,18 @@ if (!isset($_SESSION['nombre'])){
             <div class="datos">
                <form class="" action="" method="post">
                   <label for="">Nombre: </label>
-                  <input class="<?php echo isset($_POST['modificar']) ? "modificarDatos" : ""?>"type="text" name="" value="<?php echo $_SESSION['nombre']?>" <?php echo isset($_POST['modificar']) ? "" : "readonly"?>><br>
+                  <input class="<?php echo isset($_POST['modificar']) ? "modificarDatos" : ""?>"type="text" name="" value="<?php echo $_SESSION['nombre']?>" ?><br>
                   <label for="">Apellido:</label>
-                  <input class="<?php echo isset($_POST['modificar']) ? "modificarDatos" : ""?>" type="text" name="" value="<?php echo $_SESSION['apellido']?>" <?php echo isset($_POST['modificar']) ? "" : "readonly"?>><br>
+                  <input class="<?php echo isset($_POST['modificar']) ? "modificarDatos" : ""?>" type="text" name="" value="<?php echo $_SESSION['apellido']?>" ?><br>
                   <label for="">Email:</label>
-                  <input class="<?php echo isset($_POST['modificar']) ? "modificarDatos" : ""?>" type="text" name="" value="<?php echo $_SESSION['email']?>" <?php echo isset($_POST['modificar']) ? "" : "readonly"?>><br>
+                  <input class="<?php echo isset($_POST['modificar']) ? "modificarDatos" : ""?>" type="text" name="" value="<?php echo $_SESSION['email']?>" ><br>
 
                   <input class="btn-modificar" type="submit" name="modificar" value="MODIFICAR">
 
                   <?php
-                  if(isset($_POST['modificar'])){
-                     echo "<input class='btn-modificar' type='submit' name='guardar' value='GUARDAR'>";
-                  }
+                  // if(isset($_POST['modificar'])){
+                  //    echo "<input class='btn-modificar' type='submit' name='guardar' value='GUARDAR'>";
+                  // }
                   ?>
                <!--   <label for="botonModificar">Modificar datos</label>
                   <input type="checkbox" id="botonModificar" name="" value="">
