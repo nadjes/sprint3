@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once('classes/User.php');
 
 if (!isset($_SESSION['nombre'])){
   header("location: index.php");
@@ -49,11 +50,11 @@ if ($_POST) {
             <div class="datos">
                <form class="" action="" method="post">
                   <label for="">Nombre: </label>
-                  <input class="<?php echo isset($_POST['modificar']) ? "modificarDatos" : ""?>"type="text" name="" value="<?php echo $_SESSION['nombre']?>" ?><br>
+                  <input class="<?php echo isset($_POST['modificar']) ? "modificarDatos" : ""?>"type="text" name="nombre" value="<?php echo $_SESSION['nombre']?>" ?><br>
                   <label for="">Apellido:</label>
-                  <input class="<?php echo isset($_POST['modificar']) ? "modificarDatos" : ""?>" type="text" name="" value="<?php echo $_SESSION['apellido']?>" ?><br>
+                  <input class="<?php echo isset($_POST['modificar']) ? "modificarDatos" : ""?>" type="text" name="apellido" value="<?php echo $_SESSION['apellido']?>" ?><br>
                   <label for="">Email:</label>
-                  <input class="<?php echo isset($_POST['modificar']) ? "modificarDatos" : ""?>" type="text" name="" value="<?php echo $_SESSION['email']?>" ><br>
+                  <input class="<?php echo isset($_POST['modificar']) ? "modificarDatos" : ""?>" type="text" name="email" value="<?php echo $_SESSION['email']?>" ><br>
 
                   <input class="btn-modificar" type="submit" name="modificar" value="MODIFICAR">
 

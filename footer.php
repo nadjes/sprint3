@@ -36,7 +36,7 @@ Este div es el flotante de las redes sociales.
                <li><a href="#">Soporte</a></li>
                <li><a href="nosotros.php">Acerca de Nosotros</a></li>
                <li><a href="#">Contacto</a></li>
-               <li><a href="#">Otro Item</a></li>
+               <li><a href="admin.php">Administrador</a></li>
             </ul>
          </article>
 

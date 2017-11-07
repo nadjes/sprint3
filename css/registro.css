@@ -41,6 +41,7 @@
   display: flex;
   justify-content: space-between;
   width: 72%;
+  flex-wrap: wrap;
 }
 .registro .arriba input {
   font-size: 18px;

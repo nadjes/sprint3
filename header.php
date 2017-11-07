@@ -1,9 +1,9 @@
 <?php
 
 require_once("funciones.php");
-require_once('classes\Validacion.php');
-require_once('classes\Conexion.php');
-require_once('classes\User.php');
+require_once('classes/Validacion.php');
+require_once('classes/Conexion.php');
+require_once('classes/User.php');
 
   if ($_POST) {
 

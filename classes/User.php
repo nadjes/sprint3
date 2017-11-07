@@ -65,12 +65,15 @@ class User extends Conexion {
   }
 
   public function editarDatos($data) {
-    $sql = "UPDATE users SET nombre = :nombre, apellido = :apellido, email = :email";
+    $sql = "UPDATE users SET nombre= :nombre , apellido= :apellido, email= :email
+            WHERE usuario = :session";
 
     $stmt = $this->getConexion()->prepare( $sql );
     $stmt->bindParam(':nombre', $data['nombre']);
     $stmt->bindParam(':apellido', $data['apellido']);
     $stmt->bindParam(':email', $data['email']);
+    $stmt->bindParam(':session', $_SESSION['usuario']);
+
     // $stmt->bindParam(':usuario', $data['usuario']);
     // $stmt->bindValue(':password', password_hash($data['password'], PASSWORD_DEFAULT) );
     // $stmt->bindValue(':rutaImagen', $_POST['avatar']['ruta']);

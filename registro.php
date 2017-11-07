@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-require_once('classes\Validacion.php');
-require_once('classes\Conexion.php');
-require_once('classes\User.php');
+require_once('classes/Validacion.php');
+require_once('classes/Conexion.php');
+require_once('classes/User.php');
 
 if (isset($_SESSION['nombre'])){
   header ("location:index.php");
